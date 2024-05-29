@@ -1,5 +1,6 @@
 import { useState, ChangeEventHandler, FormEventHandler, FC } from "react";
 import { InputWithLabel } from "./InputWithLabel";
+import styles from "./AddTodoForm.module.css";
 
 type addTodoFormProps = {
 	onAddTodo: (title: string) => void;
@@ -20,7 +21,7 @@ const AddTodoForm: FC<addTodoFormProps> = ({ onAddTodo }) => {
 
 	return (
 		<>
-			<form onSubmit={handleAddTodo}>
+			<form onSubmit={handleAddTodo} className={styles["form-element"]}>
 				<InputWithLabel
 					todoTitle={todoTitle}
 					handleTitleChange={handleTitleChange}

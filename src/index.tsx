@@ -6,15 +6,18 @@ import { App } from "./App.tsx";
 import { ErrorPage } from "./components/ErrorPage.tsx";
 import { About } from "./components/About.tsx";
 import { TodoContainer } from "./components/TodoContainer.tsx";
-import { TodoListItemEdit } from "./components/TodoListItemEdit.tsx";
-
-import "./index.css";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
 		errorElement: <ErrorPage />,
+		children: [
+			{
+				index: true,
+				element: <TodoContainer tableName={import.meta.env.VITE_TABLE_NAME} />,
+			},
+		],
 	},
 	{ path: "/about", element: <About /> },
 ]);

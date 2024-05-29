@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { TodoListItem } from "./TodoListItem";
 import { record } from "../todoControllers";
+import TrashBin from "../assets/deleteButton.svg?react";
+import styles from "./TodoList.module.css";
 
 type TodoListProps = {
 	todoList: record[];
@@ -14,7 +16,7 @@ const TodoList: FC<TodoListProps> = ({ todoList, onRemove }) => {
 				todoList.map(({ id, fields: { title } }: record) => (
 					<TodoListItem key={id} title={title}>
 						<button type="button" onClick={() => onRemove(id)}>
-							x
+							<TrashBin className={styles["li-svg"]} />
 						</button>
 					</TodoListItem>
 				))

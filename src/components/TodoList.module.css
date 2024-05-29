@@ -1,0 +1,15 @@
+.li-svg {
+	width: 20px;
+	height: 20px;
+}
+
+.li-svg:hover {
+	fill: red;
+}
+
+@media (max-width: 480px) {
+	.li-svg {
+		width: 15px;
+		height: 15px;
+	}
+}

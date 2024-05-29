@@ -1,0 +1,26 @@
+.list-container {
+	margin: auto;
+	width: 60%;
+}
+
+.list-container li {
+	display: flex;
+	gap: 10%;
+	justify-content: space-between;
+	align-items: baseline;
+	padding-bottom: 1rem;
+}
+
+.list-container li button {
+	align-self: center;
+	background-color: transparent;
+	border: none;
+}
+
+@media (max-width: 480px) {
+	.list-container {
+		margin: 0;
+		width: 90%;
+		padding: 0 5%;
+	}
+}

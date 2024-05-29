@@ -8,7 +8,7 @@ import {
 	sortTodosAlphabetically,
 } from "../todoControllers";
 import { AddTodoForm } from "./AddTodoForm";
-
+import styles from "./TodoContainer.module.css";
 type TodoContainerProps = {
 	tableName: string;
 };
@@ -16,7 +16,6 @@ type TodoContainerProps = {
 const TodoContainer: FC<TodoContainerProps> = ({ tableName }) => {
 	const [todoList, setTodoList] = useState<record[] | []>([]);
 	const [isLoading, setIsLoading] = useState(true);
-
 	useEffect(() => {
 		const fetchTodos = async () => {
 			try {
@@ -57,7 +56,7 @@ const TodoContainer: FC<TodoContainerProps> = ({ tableName }) => {
 	};
 
 	return (
-		<>
+		<div className={styles["list-container"]}>
 			<h1>{tableName}</h1>
 			<AddTodoForm onAddTodo={addTodo} />
 			{isLoading ? (
@@ -65,7 +64,7 @@ const TodoContainer: FC<TodoContainerProps> = ({ tableName }) => {
 			) : (
 				<TodoList todoList={todoList} onRemove={removeTodo} />
 			)}
-		</>
+		</div>
 	);
 };
 

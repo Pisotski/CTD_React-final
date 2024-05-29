@@ -1,21 +1,18 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { Outlet, Link } from "react-router-dom";
-import { TodoContainer } from "./components/TodoContainer";
-const tableName = import.meta.env.VITE_TABLE_NAME;
 
 function App() {
 	return (
-		<>
+		<div className={styles["main-container"]}>
 			<nav>
-				<ul className="navbar-container">
+				<ul className={styles["navbar-container"]}>
 					<li>SVG</li>
 					<Link to="/">Todo List</Link>
 					<Link to="/about">About</Link>
 				</ul>
 			</nav>
-			<TodoContainer tableName={tableName} />
 			<Outlet />
-		</>
+		</div>
 	);
 }
 

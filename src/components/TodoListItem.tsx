@@ -8,8 +8,10 @@ type TodoListItemProps = {
 const TodoListItem: FC<TodoListItemProps> = ({ title, children }) => {
 	return (
 		<>
-			<li>{title}</li>
-			<span>{children}</span>
+			<li>
+				{title}
+				{children}
+			</li>
 		</>
 	);
 };

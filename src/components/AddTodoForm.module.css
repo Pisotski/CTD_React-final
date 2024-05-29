@@ -1,0 +1,37 @@
+.form-element {
+	margin: 2rem 0;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: baseline;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.form-element button {
+	height: 30px;
+	width: 50px;
+	border-radius: 5px;
+	border: none;
+	background-color: lightblue;
+	overflow: hidden;
+}
+
+.form-element input {
+	height: 30px;
+	border-radius: 5px;
+	width: 50%;
+	border: none;
+	background-color: lightblue;
+	overflow: hidden;
+	font-size: larger;
+}
+
+.form-element input:focus {
+	outline: none;
+}
+
+.form-element button:hover {
+	background-color: navy;
+	color: white;
+}
