@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { App, loader as AppLoader } from "./App.tsx";
+import { App } from "./App.tsx";
 import { ErrorPage } from "./components/ErrorPage.tsx";
 import { About } from "./components/About.tsx";
 import { TodoContainer } from "./components/TodoContainer.tsx";
@@ -14,23 +14,7 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
-		loader: AppLoader,
 		errorElement: <ErrorPage />,
-		children: [
-			{
-				errorElement: <ErrorPage />,
-				children: [
-					{
-						path: "/todoList",
-						element: <TodoContainer />,
-					},
-					{
-						path: "todoList/:todoId/update",
-						element: <TodoListItemEdit />,
-					},
-				],
-			},
-		],
 	},
 	{ path: "/about", element: <About /> },
 ]);

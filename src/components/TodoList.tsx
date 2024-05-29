@@ -1,22 +1,22 @@
-import { useLocation } from "react-router-dom";
+import { FC } from "react";
 import { TodoListItem } from "./TodoListItem";
+import { record } from "../todoControllers";
 
-type record = {
-	createdTime: string;
-	fields: fields;
-	id: string;
+type TodoListProps = {
+	todoList: record[];
+	onRemove: (id: string) => void;
 };
-type fields = { title: string; completedAt: string };
 
-const TodoList = () => {
-	const location = useLocation();
-	const { todoList } = location.state;
-	console.log(todoList);
+const TodoList: FC<TodoListProps> = ({ todoList, onRemove }) => {
 	return (
 		<>
-			{todoList.length ? (
+			{todoList && todoList.length ? (
 				todoList.map(({ id, fields: { title } }: record) => (
-					<TodoListItem key={id} title={title} />
+					<TodoListItem key={id} title={title}>
+						<button type="button" onClick={() => onRemove(id)}>
+							x
+						</button>
+					</TodoListItem>
 				))
 			) : (
 				<>
